@@ -1,20 +1,29 @@
 body {
   background-color: #8A0808; 
+  position: relative;
+}
+
+.fixed {
+  z-index: 1;
 }
 
 .header {
   background: linear-gradient(to bottom, #bd9a79, transparent);
   padding: 25px;
-  /*width: 700px;*/
-  margin: auto; 
+  width: 100%;
+  top: 0px;
+  /*margin: auto; */
   text-align: center;
   height: 100px;
+  position: fixed;
+  border-radius: 12px;
   /*border: 1px solid black;*/
 }
 
 h1 {
   font-variant: small-caps;
   font-size: 45px;
+  color: #02073A;
 }
 
 h2 {
@@ -26,37 +35,19 @@ h2 {
   color: white;
 }
 
-#rep_list, #about, #contact {
-  font-family: serif;
-}
-
-a:link {
-  text-decoration:none;
-}
-
-.content {
-  background: linear-gradient(to right, #bd9a79, #f9f3c1);
-  padding: 25px;
-  text-align: justify;
-  margin-top: 10px;
-  margin-right: auto;
-  margin-left: auto;
-  width:700px;
-}
-
 .navbar {
-  position: relative;
-  width: 750px;
-  margin: auto;
+  position: fixed;
+  width: 100%;
+  top: 100px;
   height: 60px;
+  /*border: 1px solid black;*/
+
 }
 .navbar .menu {
   list-style-type: none;
   text-align: right;
   margin: auto;
   width: 710px;
-  /*margin-right: 10px;*/
-  /*position: absolute;*/
   /*border: 1px solid black;*/
 }
 
@@ -78,13 +69,30 @@ a:link {
   background-color: #f9f3c1;
 }
 
-#about {
+#rep_list, #about, #contact {
+  font-family: serif;
   padding: 20px
+
 }
 
-#bio_pic {
+a:link {
+  text-decoration:none;
+}
+
+.content {
+  background: linear-gradient(to right, #bd9a79, #f9f3c1);
+  padding: 25px;
+  text-align: justify;
+  margin-top: 150px;
+  margin-right: auto;
+  margin-left: auto;
+  width:700px;
+}
+
+
+#about_pic {
+  width: 650px;
   margin: auto;
-  margin: 20px;
 }
 
 li {

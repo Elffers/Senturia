@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   def serve
     path = "public/resume.pdf"
     send_file( path,
-    :disposition => 'inline',
-    :type => 'application/pdf',
-    :x_sendfile => true )
+    disposition: 'inline',
+    type: 'application/pdf',
+    x_sendfile: true )
   end 
 end
