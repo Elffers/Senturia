@@ -1,26 +1,22 @@
 body {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   background-color: #8A0808; 
   position: relative;
 }
 
-.fixed {
-  z-index: 1;
-}
-
 .header {
   background: linear-gradient(to bottom, #bd9a79, transparent);
-  padding: 25px;
-  width: 100%;
+  padding: 20px;
   top: 0px;
   /*margin: auto; */
   text-align: center;
-  height: 100px;
-  position: fixed;
+  height: 150px;
   border-radius: 12px;
   /*border: 1px solid black;*/
 }
 
 h1 {
+  /*font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;*/
   font-variant: small-caps;
   font-size: 45px;
   color: #02073A;
@@ -33,12 +29,13 @@ h2 {
   background: linear-gradient(to right, #8A0808, transparent);
   padding: 8px;
   color: white;
+  border-radius: 12px;
 }
 
 .navbar {
-  position: fixed;
+  /*position: fixed;*/
   width: 100%;
-  top: 100px;
+  /*top: 100px;*/
   height: 60px;
   /*border: 1px solid black;*/
 
@@ -66,13 +63,13 @@ h2 {
 
 .navbar .menu li a:hover {
   color: #8A0808;
+  font-weight: 700;
   background-color: #f9f3c1;
+  border-radius: 12px;
 }
 
 #rep_list, #about, #contact {
-  font-family: serif;
-  padding: 20px
-
+  padding: 20px;
 }
 
 a:link {
@@ -80,15 +77,23 @@ a:link {
 }
 
 .content {
+  border-radius: 12px;
   background: linear-gradient(to right, #bd9a79, #f9f3c1);
   padding: 25px;
   text-align: justify;
-  margin-top: 150px;
+  /*margin-top: 150px;*/
   margin-right: auto;
   margin-left: auto;
   width:700px;
 }
 
+img {
+  border-radius: 12px;
+}
+
+#carlin {
+  font: small-caption;
+}
 
 #about_pic {
   width: 650px;
@@ -114,6 +119,12 @@ li {
 #opera {
   font-style: italic;
 }
+
+#bio_pic {
+  padding: 5px;
+  float: right;
+}
+
 
 #contact_pic {
   /*border: 1px solid black;*/
