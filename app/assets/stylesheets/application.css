@@ -19,10 +19,10 @@ h1 {
 
 h2 {
   font-variant: small-caps;
-  font-weight: 0;
+  font-weight: normal;
   font-size: 25px;
   background: linear-gradient(to right, #8A0808, transparent);
-  padding: 5px;
+  padding: 8px;
   color: white;
 }
 
