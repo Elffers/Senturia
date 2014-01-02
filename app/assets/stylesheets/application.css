@@ -19,8 +19,11 @@ h1 {
 
 h2 {
   font-variant: small-caps;
-  
-  font-size: 30px;
+  font-weight: 0;
+  font-size: 25px;
+  background: linear-gradient(to right, #8A0808, transparent);
+  padding: 5px;
+  color: white;
 }
 
 #rep_list, #about, #contact {
@@ -30,9 +33,6 @@ h2 {
 a:link {
   text-decoration:none;
 }
-
-/*a:hover {background-color:#FF00FF;}  
-a:active {color:#0000FF;}*/
 
 .content {
   background: linear-gradient(to right, #bd9a79, #f9f3c1);
@@ -46,7 +46,6 @@ a:active {color:#0000FF;}*/
 
 .navbar {
   position: relative;
-  /*border: 1px solid black;*/
   width: 750px;
   margin: auto;
   height: 60px;
@@ -55,14 +54,13 @@ a:active {color:#0000FF;}*/
   list-style-type: none;
   text-align: right;
   margin: auto;
-  width: 700px;
+  width: 710px;
   /*margin-right: 10px;*/
   /*position: absolute;*/
- /* border: 1px solid black;*/
+  /*border: 1px solid black;*/
 }
 
 .navbar .menu li {
-  /*-webkit-appearance: button;*/
   font-size: 25px;
   font-variant: small-caps; 
   display: inline-block;
@@ -72,21 +70,45 @@ a:active {color:#0000FF;}*/
 
 .navbar .menu li a {
   color: white;
+  padding: 5px;
 }
 
-.navbar .menu li:hover {
-  background-color: black;
+.navbar .menu li a:hover {
+  color: #8A0808;
+  background-color: #f9f3c1;
+}
+
+#about {
+  padding: 20px
 }
 
 #bio_pic {
   margin: auto;
-  border: 1px solid black;
   margin: 20px;
 }
+
 li {
   list-style-type: none;
 }
+
 #email {
   font-size: 22px;
-  
+}
+
+#rep_list li {
+  margin: 1em 0;
+}
+
+#composer {
+  font-weight: 700;
+}
+
+#opera {
+  font-style: italic;
+}
+
+#contact_pic {
+  /*border: 1px solid black;*/
+  width: 650px;
+  margin: auto;
 }
