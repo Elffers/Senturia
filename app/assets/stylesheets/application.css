@@ -1,49 +1,92 @@
 body {
-  background-color: #8A0808;
-}
-
-/*.content {
-  background-color: white;
-  width: 700px;
-}*/
-
-h1 {
-  font-variant: small-caps;
-  /*text-align: center;*/
+  background-color: #8A0808; 
 }
 
 .header {
+  background: linear-gradient(to bottom, #bd9a79, transparent);
   padding: 25px;
-  width: 700px;
+  /*width: 700px;*/
   margin: auto; 
-  text-align: left;
-  border: 1px solid black;
+  text-align: center;
+  height: 100px;
+  /*border: 1px solid black;*/
+}
+
+h1 {
+  font-variant: small-caps;
+  font-size: 45px;
 }
 
 h2 {
   font-variant: small-caps;
-  /*text-align: center;*/
+  
+  font-size: 30px;
 }
 
+#rep_list, #about, #contact {
+  font-family: serif;
+}
+
+a:link {
+  text-decoration:none;
+}
+
+/*a:hover {background-color:#FF00FF;}  
+a:active {color:#0000FF;}*/
+
 .content {
-  background-color: white;
+  background: linear-gradient(to right, #bd9a79, #f9f3c1);
   padding: 25px;
   text-align: justify;
+  margin-top: 10px;
   margin-right: auto;
   margin-left: auto;
   width:700px;
 }
 
-.navbar .menu {
-  
-  list-style-type: none;
+.navbar {
+  position: relative;
+  /*border: 1px solid black;*/
+  width: 750px;
   margin: auto;
-  border: 1px solid black;
-  width: 660px;
+  height: 60px;
+}
+.navbar .menu {
+  list-style-type: none;
+  text-align: right;
+  margin: auto;
+  width: 700px;
+  /*margin-right: 10px;*/
+  /*position: absolute;*/
+ /* border: 1px solid black;*/
 }
 
 .navbar .menu li {
+  /*-webkit-appearance: button;*/
+  font-size: 25px;
+  font-variant: small-caps; 
   display: inline-block;
+  /*border: 1px solid black;*/
+  padding: 10px;
+}
+
+.navbar .menu li a {
+  color: white;
+}
+
+.navbar .menu li:hover {
+  background-color: black;
+}
+
+#bio_pic {
+  margin: auto;
   border: 1px solid black;
-  padding: 5px;
+  margin: 20px;
+}
+li {
+  list-style-type: none;
+}
+#email {
+  font-size: 22px;
+  
 }
