@@ -6,6 +6,4 @@ class WelcomeController < ApplicationController
     @performances = Performance.all
   end
   
-  def analytics
-  end
 end

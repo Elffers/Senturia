@@ -5,6 +5,8 @@ Emilarr::Application.routes.draw do
   get "public/resume.pdf" => "application#serve"
   get "/calendar" => "welcome#calendar"
   get "/analytics" => "analytics#home"
+  get "/new_performance" => "analytics#new_performance"
+  post "/new_performance" => "analytics#create_performance"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
