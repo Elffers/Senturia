@@ -1,5 +1,7 @@
 body {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  color:  #321203;
+  /*#321508;*/
   background-color: #8A0808; 
   position: relative;
 }

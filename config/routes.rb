@@ -3,7 +3,7 @@ Emilarr::Application.routes.draw do
   root 'welcome#home'
 
   get "public/resume.pdf" => "application#serve"
-  get "/blog" => "welcome#blog"
+  get "/calendar" => "welcome#calendar"
   get "/analytics" => "analytics#home"
 
   # Example of regular route:

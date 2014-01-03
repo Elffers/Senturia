@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   def home
   end
 
-  def blog
+  def calendar
   end
   
   def analytics
