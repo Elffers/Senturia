@@ -93,6 +93,7 @@ img {
 
 #carlin {
   font: small-caption;
+  text-align: right;
 }
 
 #about_pic {
@@ -125,9 +126,7 @@ li {
   float: right;
 }
 
-
 #contact_pic {
-  /*border: 1px solid black;*/
   width: 650px;
   margin: auto;
 }
