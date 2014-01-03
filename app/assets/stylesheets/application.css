@@ -133,3 +133,7 @@ li {
   width: 650px;
   margin: auto;
 }
+
+td, th {
+  padding: 10px;
+}

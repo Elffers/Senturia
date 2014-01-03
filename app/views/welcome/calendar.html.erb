@@ -1,1 +1,18 @@
 <h3>Upcoming Performances</h3>
+
+<table>
+  <thead>
+    <th>Date</th>
+    <th>Venue</th>
+    <th>Program</th>
+  </thead>
+  <tbody>
+    <% @performances.each do |p| %>
+    <tr>
+      <td><%=p.date.to_date.strftime('%B %d, %Y')%></td>
+      <td><%=p.venue%></td>
+      <td><%=p.program%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

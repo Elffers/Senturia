@@ -3,6 +3,7 @@ class WelcomeController < ApplicationController
   end
 
   def calendar
+    @performances = Performance.all
   end
   
   def analytics
