@@ -10,4 +10,5 @@ class ApplicationController < ActionController::Base
     type: 'application/pdf',
     x_sendfile: true )
   end 
+
 end
