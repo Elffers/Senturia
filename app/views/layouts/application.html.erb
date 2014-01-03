@@ -12,9 +12,9 @@
 
       <div class="navbar">
         <ul class= 'menu'>
-          <li><%#=link_to "Bio", root_path, id: "about" %><a href="#about">about</a></li>
-          <li><%#= link_to "Resume", root_path, id: "resume" %><a href="#rep_list">repertoire list</a></li>
-          <li><%#= link_to "Contact", root_path, id: "contact" %><a href="#contact">contact</a></li>
+          <li><%=link_to "about", "/#about" %></li>
+          <li><%= link_to "repertoire list", "/#rep_list" %></li>
+          <li><%= link_to "contact", "/#contact" %></li>
           <li><%= link_to "blog", blog_path %>
 
         </ul>
