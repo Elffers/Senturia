@@ -74,6 +74,10 @@ h2 {
 
 a:link {
   text-decoration:none;
+  color: #07389C;
+}
+a:visited {
+  color: #02073A;
 }
 
 .content {
