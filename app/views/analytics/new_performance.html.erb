@@ -1,28 +1,30 @@
-<h3>Add a performance</h3>
+<h2>Add a performance</h2>
 
 <%= form_for @performance, url: new_performance_path do |f| %>
   <% if @performance.errors.any? %>
   <div class= "error_messages">
-    <h2> Form is invalid </h2>
+    <h3> Form is invalid </h3>
     <ul>
-      <% for message in @user.errors.full_messages %>
+      <% for message in @performance.errors.full_messages %>
         <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :date, "Date (dd/mm/yyyy)"%>
+    <%= f.label :date, "Date (dd/mm/yyyy)"%><br>
     <%= f.text_field :date %>
   </div>
   <div class="field">
-    <%= f.label :venue%>
+    <%= f.label :venue%><br>
     <%= f.text_field :venue %>
   </div>
   <div class="field">
-    <%= f.label :program %>
+    <%= f.label :program %><br>
     <%= f.text_field :program %>
+  </div><br>
+  <div class= "actions">
+    <%=f.submit "Add to calendar" %>
   </div>
-  <div class= "actions"><%=f.submit %></div>
 
 <% end %>
