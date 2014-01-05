@@ -4,7 +4,7 @@ class AnalyticsController < ApplicationController
   def home
   end
 
-  def new_performance
+  def new_performance 
     @performance = Performance.new
   end
 
