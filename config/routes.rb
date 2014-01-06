@@ -8,6 +8,9 @@ Emilarr::Application.routes.draw do
   get "/new_performance" => "analytics#new_performance"
   post "/new_performance" => "analytics#create_performance"
 
+  get "/edit_bio" => "analytics#edit_bio"
+  post "/edit_bio" => "analytics#update_bio"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

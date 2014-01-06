@@ -26,3 +26,5 @@ module Emilarr
     # config.i18n.default_locale = :de
   end
 end
+
+#config.assets.precompile += %w(editor.js editor.css)

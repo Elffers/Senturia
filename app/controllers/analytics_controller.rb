@@ -17,9 +17,27 @@ class AnalyticsController < ApplicationController
     end
   end
 
+  def edit_bio
+    @about = About.new
+  end
+
+  def update_bio
+    @about = About.new(about_params)
+    if @about.save
+      redirect_to root_path
+    else
+      render :edit_bio
+    end
+  end
+
   private
   def performance_params
     params.require(:performance).permit(:date, :venue, :program)
   end
+
+  def about_params
+    params.require(:about).permit(:bio)
+  end
+  
 
 end
