@@ -1,7 +1,9 @@
 class WelcomeController < ApplicationController
   def home
     @bio = About.last[:bio]
-  end
+    @list = Composer.all
+
+  end  
 
   def calendar
     @performances = Performance.all

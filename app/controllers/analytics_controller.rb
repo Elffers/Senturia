@@ -30,6 +30,12 @@ class AnalyticsController < ApplicationController
     end
   end
 
+  def add_rep
+  end
+
+  def update_rep
+  end
+
   private
   def performance_params
     params.require(:performance).permit(:date, :venue, :program)

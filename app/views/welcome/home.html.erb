@@ -6,8 +6,8 @@
     <div id="carlin"><%=link_to "Carlin Ma Photography", "http://www.carlinmaphotography.com/" %></div>
   </div>
   <p id='bio'>
-    
-  Emily Senturia, a répétiteur from San Francisco, is a first-year member of the Houston Grand Opera Studio, where she coaches <i>Aida</i>, <i>Rigoletto</i>, <i>A Little Night Music</i>, and <i>Carmen</i> during the 2013-14 season. She has been on the music staff for nearly forty operatic productions at Virginia Opera, Brevard Music Center, Rice University, and Indiana University, among others. Senturia held the 2011-12 Lucille Graham Répétiteur/Conducting Fellowship at the Royal Academy of Music in London. She spent four summers as a coaching fellow at the Aspen Music Festival, where most recently she was a coach for <i>Peter Grimes</i> and chorus master for <i>Candide</i>. Senturia recently served as assistant conductor and coach for <i>The Barber of Seville</i> and <i>Tosca</i> with Pensacola Opera, as well as <i>Carmen</i> with The Atlanta Opera. She has played under the direction of Robert Spano, Jane Glover, Arthur Fagen, Sir Colin Davis, Michael Christie, and Cristian Macelaru. 
+    <%= @bio %>
+  <!-- Emily Senturia, a répétiteur from San Francisco, is a first-year member of the Houston Grand Opera Studio, where she coaches <i>Aida</i>, <i>Rigoletto</i>, <i>A Little Night Music</i>, and <i>Carmen</i> during the 2013-14 season. She has been on the music staff for nearly forty operatic productions at Virginia Opera, Brevard Music Center, Rice University, and Indiana University, among others. Senturia held the 2011-12 Lucille Graham Répétiteur/Conducting Fellowship at the Royal Academy of Music in London. She spent four summers as a coaching fellow at the Aspen Music Festival, where most recently she was a coach for <i>Peter Grimes</i> and chorus master for <i>Candide</i>. Senturia recently served as assistant conductor and coach for <i>The Barber of Seville</i> and <i>Tosca</i> with Pensacola Opera, as well as <i>Carmen</i> with The Atlanta Opera. She has played under the direction of Robert Spano, Jane Glover, Arthur Fagen, Sir Colin Davis, Michael Christie, and Cristian Macelaru.  -->
   </p>
 
   <div id="home_link">
@@ -17,124 +17,139 @@
 
 <div id="rep_list">
   <h2>repertoire list</h2>
-   <div id="bio_pic">
+    <div id="bio_pic">
       <%=image_tag("headshot.jpg", width:"250")%>
       <div id="carlin">
         <%=link_to "Carlin Ma Photography", "http://www.carlinmaphotography.com/" %>
       </div>
     </div>
-    <h3><%=link_to "View full resume", "public/resume.pdf" %></h3>
+  <h3><%=link_to "View full resume", "public/resume.pdf" %></h3>
+  <table class="opera_list">
+    <tbody>
+      <% @list.each do |composer|%>
+        <tr>
+          <td><strong><%= composer.name %></strong></td>
+          <td><% composer.operas.each do |opera| %>
+            <ul>
+              <li><i><%=opera.name%></i> <%="[#{opera.notes}]" if opera.notes %></li>
+            </ul> 
+          <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </ul>
 
-    <ul>
-      <li><span id="composer">Bartók, Béla</span>
-        <ul>
-          <li id="opera">Bluebeardʼs Castle [Hungarian]</li>
-        </ul></li>
-      <li><span id="composer">Berlioz, Hector</span>
-        <ul>
-          <li id="opera"> Béatrice et Bénédict</li>
-        </ul></li>
-      <li><span id="composer">Bernstein, Leonard</span>
-        <ul>
-          <li id="opera">Candide</li>
-          <li id="opera"> West Side Story</li>
-        </ul></li>
-      <li><span id="composer">Bizet, Georges</span>
-        <ul>
-          <li id="opera"> Carmen</li>
-        </ul></li>
-      <li><span id="composer">Britten, Benjamin</span>
-        <ul>
-          <li id="opera">A Midsummer Nightʼs Dream</li>
-          <li id="opera">Peter Grimes</li>
-        </ul></li>
-      <li><span id="composer">Corigliano, John</span>
-        <ul>
-          <li id="opera"> The Ghosts of Versailles</li>
-        </ul></li>
-      <li><span id="composer">Dove, Jonathan</span>
-        <ul>
-          <li id="opera"> Mansﬁeld Park</li>
-        </ul></li>
-      <li><span id="composer">Floyd, Carlisle</span>
-        <ul>
-          <li id="opera"> Susannah</li>
-        </ul></li>
-      <li><span id="composer">Harbison, John</span>
-        <ul>
-          <li id="opera"> The Great Gatsby</li>
-        </ul></li>
-      <li><span id="composer">Loesser, Frank</span>
-        <ul>
-          <li id="opera"> The Most Happy Fella</li>
-        </ul></li>
-      <li><span id="composer">Massenet, Jules</span>
-        <ul>
-          <li id="opera"> Cendrillon</li>
-        </ul></li>
-      <li><span id="composer">Monteverdi, Claudio</span>
-        <ul>
-          <li id="opera"> Lʼincoronazione di Poppea [abridged]</li>
-        </ul></li>
-      <li><span id="composer">Moore, Douglas</span>
-        <ul>
-          <li id="opera"> The Ballad of Baby Doe</li>
-        </ul></li>
-      <li><span id="composer">Mozart, W.A.</span>
-        <ul>
-          <li id="opera">Così fan Tutte [English]</li>
-          <li id="opera">Die Zauberﬂöte</li>
-        </ul></li>
-      <li><span id="composer">Nicolai, Otto</span>
-        <ul>
-          <li id="opera"> Die Lustigen Weiber von Windsor</li>
-        </ul></li>
-      <li><span id="composer">Puccini, Giacomo</span>
-        <ul>
-          <li id="opera">La bohème</li>
-          <li id="opera">Madama Butterﬂy</li>
-          <li id="opera">Tosca</li>
-        </ul></li>
-      <li><span id="composer">Ravel, Maurice</span>
-        <ul>
-          <li id="opera"> Lʼenfant et les sortilèges</li>
-        </ul></li>
-      <li><span id="composer">Rossini, Giacchino</span>
-        <ul>
-          <li id="opera"> Il barbiere di Siviglia</li>
-        </ul></li>
-      <li><span id="composer">Sondheim, Stephen</span>
-        <ul>
-          <li id="opera">A Little Night Music</li>
-          <li id="opera">Sweeney Todd</li></ul>
-      <li><span id="composer">Strauss, Richard</span>
-        <ul>
-          <li id="opera">Ariadne auf Naxos [Prologue]</li>
-        </ul></li>
-      <li><span id="composer">Sullivan, Sir Arthur</span>
-        <ul>
-          <li id="opera">Iolanthe</li>
-          <li id="opera">The Mikado</li>
-          <li id="opera">The Pirates of Penzance</li>
-          <li id="opera">The Yeomen of the Guard</li>
-        </ul></li>
-      <li><span id="composer">Vaughan Williams, Ralph</span>
-        <ul>
-          <li id="opera"> Riders to the Sea</li>
-        </ul></li>
-      <li><span id="composer">Verdi, Giuseppe</span>
-        <ul>
-          <li id="opera">Aida</li>
-          <li id="opera">Rigoletto</li>
-        </ul></li>
-      <li><span id="composer">Weill, Kurt</span>
-        <ul>
-          <li id="opera"> The Threepenny Opera [English]</li>
-        </ul></li>
-    </ul>
-    <div id="home_link">
-      <%=link_to "Back to top", root_path, class: "smoothScroll" %>
-    </div>
+     <!-- <li><span id="composer">Bartók, Béla</span>
+      <ul>
+        <li id="opera">Bluebeardʼs Castle [Hungarian]</li>
+      </ul></li>
+    <li><span id="composer">Berlioz, Hector</span>
+      <ul>
+        <li id="opera"> Béatrice et Bénédict</li>
+      </ul></li>
+    <li><span id="composer">Bernstein, Leonard</span>
+      <ul>
+        <li id="opera">Candide</li>
+        <li id="opera"> West Side Story</li>
+      </ul></li>
+    <li><span id="composer">Bizet, Georges</span>
+      <ul>
+        <li id="opera"> Carmen</li>
+      </ul></li>
+    <li><span id="composer">Britten, Benjamin</span>
+      <ul>
+        <li id="opera">A Midsummer Nightʼs Dream</li>
+        <li id="opera">Peter Grimes</li>
+      </ul></li>
+    <li><span id="composer">Corigliano, John</span>
+      <ul>
+        <li id="opera"> The Ghosts of Versailles</li>
+      </ul></li>
+    <li><span id="composer">Dove, Jonathan</span>
+      <ul>
+        <li id="opera"> Mansﬁeld Park</li>
+      </ul></li>
+    <li><span id="composer">Floyd, Carlisle</span>
+      <ul>
+        <li id="opera"> Susannah</li>
+      </ul></li>
+    <li><span id="composer">Harbison, John</span>
+      <ul>
+        <li id="opera"> The Great Gatsby</li>
+      </ul></li>
+    <li><span id="composer">Loesser, Frank</span>
+      <ul>
+        <li id="opera"> The Most Happy Fella</li>
+      </ul></li>
+    <li><span id="composer">Massenet, Jules</span>
+      <ul>
+        <li id="opera"> Cendrillon</li>
+      </ul></li>
+    <li><span id="composer">Monteverdi, Claudio</span>
+      <ul>
+        <li id="opera"> Lʼincoronazione di Poppea [abridged]</li>
+      </ul></li>
+    <li><span id="composer">Moore, Douglas</span>
+      <ul>
+        <li id="opera"> The Ballad of Baby Doe</li>
+      </ul></li>
+    <li><span id="composer">Mozart, W.A.</span>
+      <ul>
+        <li id="opera">Così fan Tutte [English]</li>
+        <li id="opera">Die Zauberﬂöte</li>
+      </ul></li>
+    <li><span id="composer">Nicolai, Otto</span>
+      <ul>
+        <li id="opera"> Die Lustigen Weiber von Windsor</li>
+      </ul></li>
+    <li><span id="composer">Puccini, Giacomo</span>
+      <ul>
+        <li id="opera">La bohème</li>
+        <li id="opera">Madama Butterﬂy</li>
+        <li id="opera">Tosca</li>
+      </ul></li>
+    <li><span id="composer">Ravel, Maurice</span>
+      <ul>
+        <li id="opera"> Lʼenfant et les sortilèges</li>
+      </ul></li>
+    <li><span id="composer">Rossini, Giacchino</span>
+      <ul>
+        <li id="opera"> Il barbiere di Siviglia</li>
+      </ul></li>
+    <li><span id="composer">Sondheim, Stephen</span>
+      <ul>
+        <li id="opera">A Little Night Music</li>
+        <li id="opera">Sweeney Todd</li></ul>
+    <li><span id="composer">Strauss, Richard</span>
+      <ul>
+        <li id="opera">Ariadne auf Naxos [Prologue]</li>
+      </ul></li>
+    <li><span id="composer">Sullivan, Sir Arthur</span>
+      <ul>
+        <li id="opera">Iolanthe</li>
+        <li id="opera">The Mikado</li>
+        <li id="opera">The Pirates of Penzance</li>
+        <li id="opera">The Yeomen of the Guard</li>
+      </ul></li>
+    <li><span id="composer">Vaughan Williams, Ralph</span>
+      <ul>
+        <li id="opera"> Riders to the Sea</li>
+      </ul></li>
+    <li><span id="composer">Verdi, Giuseppe</span>
+      <ul>
+        <li id="opera">Aida</li>
+        <li id="opera">Rigoletto</li>
+      </ul></li>
+    <li><span id="composer">Weill, Kurt</span>
+      <ul>
+        <li id="opera"> The Threepenny Opera [English]</li>
+      </ul></li>
+  </ul> -->
+  <div id="home_link">
+    <%=link_to "Back to top", root_path, class: "smoothScroll" %>
+  </div>
 </div>
 
 <div id="contact">
@@ -157,17 +172,3 @@
     </div>
 </div>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-46840099-1', 'senturia.herokuapp.com');
-  ga('send', 'pageview');
-
-<<<<<<< HEAD
-</script>
-=======
-</script>
->>>>>>> master

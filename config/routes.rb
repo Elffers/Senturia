@@ -11,6 +11,9 @@ Emilarr::Application.routes.draw do
   get "/edit_bio" => "analytics#edit_bio"
   post "/edit_bio" => "analytics#update_bio"
 
+  get "/update_rep" => "analytics#add_rep"
+  post "/update_rep" => "analytics#update_rep"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

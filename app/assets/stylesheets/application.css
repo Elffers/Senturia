@@ -72,6 +72,7 @@ h3 {
 
 #rep_list, #about, #contact {
   padding: 20px;
+  margin: 50px auto;
 }
 
 a:link {
@@ -140,9 +141,19 @@ li {
 .calendar {
   margin: auto;
   /*border: 1px solid black;*/
-
 }
 
 td, th {
   padding: 10px 30px;
 }
+
+.opera_list td {
+  height: 30px;
+  padding: 10px;
+  /*border: 1px solid black;*/
+}
+/*
+#home_link {
+  margin-left: auto;
+}
+*/
