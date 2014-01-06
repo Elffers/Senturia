@@ -37,6 +37,16 @@ class AnalyticsController < ApplicationController
 
   def update_rep
     @opera = Opera.new(opera_params)
+    # if params[:composer_name]
+    #   Composer.create(name: params[:composer_name])
+    #   @opera.composer_id = Composer.find_by(name: params[:composer_name]).id
+    # end
+    if @opera.save
+      redirect_to root_path
+    else
+      render :add_rep
+    end
+
   end
 
   private
