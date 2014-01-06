@@ -1,0 +1,32 @@
+<h2>Update Repertoire</h2>
+
+<%= form_for @opera, url: update_rep_path do |f| %>
+  <% if @opera.errors.any? %>
+  <div class= "error_messages">
+    <h3> Form is invalid </h3>
+    <ul>
+      <% for message in @opera.errors.full_messages %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :composer_id %><br>
+    <%= f.select(:composer_id, @composers, include_blank: "Add new composer") %>
+  </div>
+  <div class="field">
+    <%= f.label :composer_name %><br>
+    <%= f.text_field :composer_name %>
+  </div>
+
+
+  <div class= "actions">
+    <%=f.submit "Update rep" %>
+  </div>
+
+<% end %>

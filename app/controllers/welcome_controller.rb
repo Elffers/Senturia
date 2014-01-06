@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def home
     @bio = About.last[:bio]
-    @list = Composer.all
+    @list = Composer.all.sort_by{|x| x[:name]}
 
   end  
 

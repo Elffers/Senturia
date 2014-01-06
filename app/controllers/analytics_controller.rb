@@ -31,9 +31,12 @@ class AnalyticsController < ApplicationController
   end
 
   def add_rep
+    @opera = Opera.new
+    @composers = Composer.all.sort_by{|x| x[:name]}.map {|x| [x[:name], x[:id]]}
   end
 
   def update_rep
+    @opera = Opera.new(opera_params)
   end
 
   private
@@ -43,6 +46,10 @@ class AnalyticsController < ApplicationController
 
   def about_params
     params.require(:about).permit(:bio)
+  end
+
+  def opera_params
+    params.require(:opera).permit(:name, :composer_id, :composer_name)
   end
   
 
