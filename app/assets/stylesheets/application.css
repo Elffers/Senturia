@@ -54,6 +54,7 @@ h3 {
   font-variant: small-caps; 
   display: inline-block;
   padding: 10px;
+  /*border: 1px solid black;*/
 }
 
 .navbar .menu li a {
@@ -63,8 +64,9 @@ h3 {
 
 .navbar .menu li a:hover {
   color: #8A0808;
-  font-weight: 700;
+  /*font-weight: 700;*/
   background-color: #f9f3c1;
+  min-width: 170px;
   border-radius: 12px;
 }
 
