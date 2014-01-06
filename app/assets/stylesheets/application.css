@@ -72,7 +72,7 @@ h3 {
 
 #rep_list, #about, #contact {
   padding: 20px;
-  margin: 50px auto;
+  margin: 10px auto 50px;
 }
 
 a:link {
@@ -148,9 +148,11 @@ td, th {
 }
 
 .opera_list td {
-  height: 30px;
-  padding: 10px;
-  /*border: 1px solid black;*/
+  height: 50px;
+  padding: 5px;
+  width: 200px;
+  border: 1px solid black;
+  text-align: left;
 }
 /*
 #home_link {

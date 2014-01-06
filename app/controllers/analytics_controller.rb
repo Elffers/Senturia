@@ -59,7 +59,7 @@ class AnalyticsController < ApplicationController
   end
 
   def opera_params
-    params.require(:opera).permit(:name, :composer_id, :composer_name)
+    params.require(:opera).permit(:name, :notes, :composer_id, :composer_name)
   end
   
 

@@ -16,6 +16,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_field :notes %>
+  </div>
+  <div class="field">
     <%= f.label :composer_id %><br>
     <%= f.select(:composer_id, @composers, include_blank: "Add new composer") %>
   </div>
