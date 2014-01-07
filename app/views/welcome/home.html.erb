@@ -28,14 +28,16 @@
     <tbody>
       <% @list.each do |composer|%>
         <tr>
-          <td><strong><%= composer.name %></strong></td>
-          <td><% composer.operas.each do |opera| %>
-            <ul>
-              <li><i><%=opera.name%></i> <%="[#{opera.notes}]" if opera.notes %></li>
-            </ul> 
-          <% end %>
-          </td>
-        </tr>
+          <% unless composer.name == "" %>
+            <td><strong><%= composer.name %></strong></td>
+            <td><% composer.operas.each do |opera| %>
+              <ul>
+                <li><i><%=opera.name%></i> <%="[#{opera.notes}]" if opera.notes!= '' %></li>
+              </ul> 
+            <% end %>
+            </td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>

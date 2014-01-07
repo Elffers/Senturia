@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def home
-    @bio = About.last[:bio]
+    @bio = "Emily is nice." || About.last[:bio]
     @list = Composer.all.sort_by{|x| x[:name]}
 
   end  

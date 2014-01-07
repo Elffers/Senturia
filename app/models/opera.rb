@@ -6,9 +6,8 @@ class Opera < ActiveRecord::Base
 
   private
   def check_composer
-    if self.composer_name
-      c = Composer.create(name: composer_name)
-      self.composer = c  
+    if self.composer_name != ''
+      self.composer = Composer.create(name: composer_name)
     end
   end
 
