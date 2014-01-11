@@ -1,8 +1,10 @@
 class Opera < ActiveRecord::Base
   attr_accessor :composer_name
-  # validates :name, presence: true
+  
+  validates :name, presence: true
 
   before_save :check_composer
+  
   belongs_to :composer
 
   private

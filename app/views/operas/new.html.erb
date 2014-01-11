@@ -1,0 +1,12 @@
+<h2>Add Repertoire</h2>
+<%= render 'form' %>
+
+<ul>
+<% @operas.each do |o| %>
+  <li>
+    <%= o.name %>
+    (<%= o.composer.name %>)
+    <%=link_to "Edit",  operas_edit(o.id) %>
+  </li>
+<% end %>
+</ul>

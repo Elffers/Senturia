@@ -1,3 +1,4 @@
+require 'pp'
 class AnalyticsController < ApplicationController
   http_basic_authenticate_with name: "Emilarr", password: "papillon1904"
 
@@ -30,26 +31,6 @@ class AnalyticsController < ApplicationController
     end
   end
 
-  def add_rep
-    @opera = Opera.new
-    @composers = Composer.all.sort_by{|x| x[:name]}.map {|x| [x[:name], x[:id]]}
-  end
-
-  def update_rep
-    @opera = Opera.new(opera_params)
-   
-    #   Composer.create(name: params[:composer_name])
-    #   @opera.composer_id = Composer.find_by(name: params[:composer_name]).id
-    # end
-    if @opera.save
-      
-      redirect_to root_path
-    else
-      render :add_rep
-    end
-
-  end
-
   private
   def performance_params
     params.require(:performance).permit(:date, :venue, :program)
@@ -58,10 +39,5 @@ class AnalyticsController < ApplicationController
   def about_params
     params.require(:about).permit(:bio)
   end
-
-  def opera_params
-    params.require(:opera).permit(:name, :notes, :composer_id, :composer_name)
-  end
-  
 
 end

@@ -73,6 +73,7 @@ h3 {
 #rep_list, #about, #contact {
   padding: 20px;
   margin: 10px auto 50px;
+  border: 1px solid black;
 }
 
 a:link {
@@ -130,7 +131,10 @@ li {
 
 #bio_pic {
   padding: 5px;
+  position: relative; 
+  width: 260px;
   float: right;
+  border: 1px solid black;
 }
 
 #contact_pic {
@@ -147,12 +151,16 @@ td, th {
   padding: 10px 30px;
 }
 
+.opera_list {
+  border: 1px solid black;
+}
 .opera_list td {
   height: 50px;
   padding: 5px;
   width: 200px;
   border: 1px solid black;
   text-align: left;
+
 }
 /*
 #home_link {
