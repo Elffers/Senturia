@@ -3,6 +3,8 @@ class AnalyticsController < ApplicationController
   http_basic_authenticate_with name: "Emilarr", password: "papillon1904"
 
   def home
+    @request = request
+    raise
   end
 
   def new_performance 
@@ -17,6 +19,8 @@ class AnalyticsController < ApplicationController
       render :new_performance
     end
   end
+
+
 
   def edit_bio
     @about = About.new

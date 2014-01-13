@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140106162849) do
+ActiveRecord::Schema.define(version: 20140113230321) do
 
   create_table "abouts", force: true do |t|
     t.text     "bio"
@@ -37,6 +37,18 @@ ActiveRecord::Schema.define(version: 20140106162849) do
     t.string   "date"
     t.string   "venue"
     t.text     "program"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "visitors", force: true do |t|
+    t.string   "ip_address"
+    t.boolean  "mobile"
+    t.string   "browser"
+    t.integer  "page_visits"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.string   "language"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
