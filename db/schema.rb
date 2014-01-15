@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140113230321) do
+ActiveRecord::Schema.define(version: 20140115000320) do
 
   create_table "abouts", force: true do |t|
     t.text     "bio"
@@ -45,12 +45,13 @@ ActiveRecord::Schema.define(version: 20140113230321) do
     t.string   "ip_address"
     t.boolean  "mobile"
     t.string   "browser"
-    t.integer  "page_visits"
+    t.integer  "pageview_visits", default: 0
     t.time     "start_time"
     t.time     "end_time"
     t.string   "language"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "visit_count",     default: 0
   end
 
 end

@@ -1,4 +1,4 @@
-<%= form_for @opera, url: update_rep_path do |f| %>
+<%= form_for @opera, url:operas_path do |f| %>
   <% if @opera.errors.any? %>
   <div class= "error_messages">
     <h3> Form is invalid </h3>
@@ -26,6 +26,6 @@
     <%= f.text_field :composer_name %>
   </div>
   <div class= "actions">
-    <%=f.submit "Update rep" %>
+    <%=f.submit %>
   </div>
 <% end %>

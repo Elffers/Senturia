@@ -1,8 +1,9 @@
 Emilarr::Application.routes.draw do
   
-  get "operas/new" => 'operas#new'
-  get "operas/edit"
-  root 'welcome#home'
+  get "/operas/new" => 'operas#new'
+  post '/operas' => 'operas#create'
+  get "operas/:id/edit" => 'operas#edit'
+  patch '/operas' => 'operas#update'
 
   get "public/resume.pdf" => "application#serve"
   get "/calendar" => "welcome#calendar"
@@ -13,9 +14,9 @@ Emilarr::Application.routes.draw do
   get "/edit_bio" => "analytics#edit_bio"
   post "/edit_bio" => "analytics#update_bio"
 
-  get "/update_rep" => "analytics#add_rep", as: :opera
-  post "/update_rep" => "analytics#update_rep"
-  get "/edit_rep/:id" => "analytics#edit_rep"
-  patch "/update_rep" => "analytics#update_rep"
+  # get "/update_rep" => "analytics#add_rep", as: :opera
+ 
+  root 'welcome#home'
+
 
 end

@@ -28,6 +28,12 @@ class OperasController < ApplicationController
     end
   end
 
+  def delete
+    @opera = Opera.find(params[:id])
+    @opera.destroy
+
+  end
+
   private
 
   def opera_params

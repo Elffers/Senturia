@@ -1,14 +1,25 @@
 <h3>Visits</h3>
 
-
+<% @request.inspect %>
 <table>
   <thead>
   </thead>
-    <th>Visitors</th>
+    <th>Total visits</th>
     <th>Unique vistors</th>
-    <th>Bounce rate </th>
+    <th>Page views</th>
+    <th>Average visit time</th>
+    <th>Language</th>
   <tbody>
     <tr>
+      <td>
+        <%= Visitor.total_visits %>
+      </td>
+      <td>
+        <%= @total_visits %>
+      </td>
+      <td>
+        <%= Visitor.total_pageviews %>
+      </td>
     </tr>
 
   </tbody>

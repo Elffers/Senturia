@@ -6,7 +6,8 @@
   <li>
     <%= o.name %>
     (<%= o.composer.name %>)
-    <%=link_to "Edit",  operas_edit(o.id) %>
+
+    <%=link_to "Edit", "/operas/#{o.id}/edit"%>
   </li>
 <% end %>
 </ul>

@@ -4,7 +4,8 @@ class AnalyticsController < ApplicationController
 
   def home
     @request = request
-    raise
+    @total_visits = Visitor.all.count
+
   end
 
   def new_performance 
@@ -19,8 +20,6 @@ class AnalyticsController < ApplicationController
       render :new_performance
     end
   end
-
-
 
   def edit_bio
     @about = About.new
