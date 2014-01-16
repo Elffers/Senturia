@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
       cookies.permanent[:visitor_id] = rand(1000000000000000000).to_s
       @current_visitor = Visitor.create(cookie_id: cookies.permanent[:visitor_id], browser: self.find_browser)
       session[:visitor_id] = @current_visitor.id
+      Browser.create(name:find_browser)
     end
     @current_visitor
   end
@@ -31,11 +32,11 @@ class ApplicationController < ActionController::Base
 
   def update_visit_count
     if Rails.env.development?
-      unless ( request.referer && request.referer.include?("localhost") )
+      unless (request.referer && request.referer.include?("localhost") )
         @current_visitor.update(visit_count: @current_visitor.visit_count + 1)
       end
     elsif Rails.env.production?
-      unless ( request.referer && request.referer.include?("senturia") )
+      unless (request.referer && request.referer.include?("senturia") )
         @current_visitor.update(visit_count: @current_visitor.visit_count + 1)
       end
     end

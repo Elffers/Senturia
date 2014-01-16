@@ -4,9 +4,7 @@ class AnalyticsController < ApplicationController
 
   def home
     @total_visits = Visitor.all.count
-    @browser = find_browser
-    # have browser count
-
+    @browsers = Browser.all
   end
 
   def new_performance 

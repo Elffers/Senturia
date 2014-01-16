@@ -1,13 +1,13 @@
 <h3>Visits</h3>
 <%# raise %>
-<%= @browser %>
+<%= @browsers.inspect %>
 <table>
   <thead>
   </thead>
     <th>Total visits</th>
     <th>Unique vistors</th>
     <th>Page views</th>
-    <th>Average visit time</th>
+    <!-- <th>Average visit time</th> -->
   <tbody>
     <tr>
       <td id="total_visits">
@@ -20,11 +20,19 @@
         <%= Visitor.total_pageviews %>
       </td>
     </tr>
-
   </tbody>
 </table>
+
 <canvas id="pie_chart", height= '300', width='300'></canvas>
 <div id="analytics">
+  <table>
+    <thead>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr></tr>
+    </tbody>
+  </table>
 
 </div>
 <hr>
