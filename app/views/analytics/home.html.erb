@@ -1,6 +1,6 @@
 <h3>Visits</h3>
 <%# raise %>
-<%= @browsers.inspect %>
+<%= Browser.all.inspect %>
 <table>
   <thead>
   </thead>
@@ -25,12 +25,24 @@
 
 <canvas id="pie_chart", height= '300', width='300'></canvas>
 <div id="analytics">
+  <h3>Browsers used</h3>
   <table>
     <thead>
-      <th></th>
+      <th>Chrome</th>
+      <th>Firefox</th>
+      <th>Safari</th>
+      <th>Internet Explorer</th>
+      <th>Other</th>
     </thead>
     <tbody>
-      <tr></tr>
+      <tr>
+        <td><%=@chrome%></td>
+        <td><%=@firefox%></td>
+        <td><%=@safari%></td>
+        <td><%=@ie%></td>
+        <td><%=@other%></td>
+
+      </tr>
     </tbody>
   </table>
 
