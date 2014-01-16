@@ -1,9 +1,10 @@
 Emilarr::Application.routes.draw do
   
   get "/operas/new" => 'operas#new'
-  post '/operas' => 'operas#create'
+  post '/operas' => 'operas#create', as: :operas
   get "operas/:id/edit" => 'operas#edit'
-  patch '/operas' => 'operas#update'
+  patch '/operas/:id' => 'operas#update', as: :opera
+  delete 'operas/:id' => 'operas#delete'
 
   get "public/resume.pdf" => "application#serve"
   get "/calendar" => "welcome#calendar"

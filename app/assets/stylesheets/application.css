@@ -162,6 +162,11 @@ td, th {
   text-align: left;
 
 }
+
+#pie_chart {
+  border: 1px solid black;
+ 
+}
 /*
 #home_link {
   margin-left: auto;

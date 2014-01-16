@@ -8,6 +8,8 @@
     (<%= o.composer.name %>)
 
     <%=link_to "Edit", "/operas/#{o.id}/edit"%>
+    <%=link_to "Delete", "/operas/#{o.id}", method: :delete%>
+
   </li>
 <% end %>
 </ul>

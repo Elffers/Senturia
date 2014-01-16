@@ -1,6 +1,6 @@
 <h3>Visits</h3>
-
-<% @request.inspect %>
+<%# raise %>
+<%= @request.inspect %>
 <table>
   <thead>
   </thead>
@@ -8,13 +8,12 @@
     <th>Unique vistors</th>
     <th>Page views</th>
     <th>Average visit time</th>
-    <th>Language</th>
   <tbody>
     <tr>
-      <td>
+      <td id="total_visits">
         <%= Visitor.total_visits %>
       </td>
-      <td>
+      <td id="unique_visits">
         <%= @total_visits %>
       </td>
       <td>
@@ -24,6 +23,8 @@
 
   </tbody>
 </table>
+
+<canvas id="pie_chart", height= '200', width='200'></canvas>
 
 <h3>Mobile Visits</h3>
 

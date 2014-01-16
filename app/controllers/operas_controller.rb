@@ -31,7 +31,7 @@ class OperasController < ApplicationController
   def delete
     @opera = Opera.find(params[:id])
     @opera.destroy
-
+    redirect_to root_path
   end
 
   private
