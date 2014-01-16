@@ -1,15 +1,22 @@
 <h2>Add Repertoire</h2>
 <%= render 'form' %>
 
-<ul>
+<h3>Current Rep List</h3>
+<table>
+  <thead>
+    <th>Opera</th>
+    <th>Composer</th>
+    <th>Edit</th>
+    <th>Remove</th>
+  </thead>
+  <tbody>
 <% @operas.each do |o| %>
-  <li>
-    <%= o.name %>
-    (<%= o.composer.name %>)
-
-    <%=link_to "Edit", "/operas/#{o.id}/edit"%>
-    <%=link_to "Delete", "/operas/#{o.id}", method: :delete%>
-
-  </li>
+  <tr>
+    <td><%= o.name %></td>
+    <td><%= o.composer.name %></td>
+    <td><%=link_to "Edit", "/operas/#{o.id}/edit"%></td>
+    <td><%=link_to "Delete", "/operas/#{o.id}", method: :delete, data: { confirm: 'Are you sure?' }%></td>
+  </tr>
 <% end %>
-</ul>
+</tbody>
+</table>

@@ -3,8 +3,9 @@ class AnalyticsController < ApplicationController
   http_basic_authenticate_with name: "Emilarr", password: "papillon1904"
 
   def home
-    @request = request
     @total_visits = Visitor.all.count
+    @browser = find_browser
+    # have browser count
 
   end
 
@@ -42,5 +43,7 @@ class AnalyticsController < ApplicationController
   def about_params
     params.require(:about).permit(:bio)
   end
+
+ 
 
 end

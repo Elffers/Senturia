@@ -10,6 +10,9 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem "user_agent_info", "~> 0.1.0"
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

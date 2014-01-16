@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115000320) do
+ActiveRecord::Schema.define(version: 20140116213727) do
 
   create_table "abouts", force: true do |t|
     t.text     "bio"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20140115000320) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "visit_count",     default: 0
+    t.string   "cookie_id"
   end
 
 end

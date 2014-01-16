@@ -17,11 +17,12 @@ class ApplicationController < ActionController::Base
    def current_visitor
     if session[:visitor_id]
       @current_visitor = Visitor.find(session[:visitor_id])
-    elsif Visitor.find_by(ip_address: request.remote_ip)
-      @current_visitor = Visitor.find_by(ip_address: request.remote_ip)
+    elsif cookies.permanent[:visitor_id] && Visitor.find_by(cookie_id: cookies.permanent[:visitor_id])
+      @current_visitor = Visitor.find_by(cookie_id: cookies.permanent[:visitor_id])
       session[:visitor_id] = @current_visitor.id
     else
-      @current_visitor = Visitor.create(ip_address: request.remote_ip)
+      cookies.permanent[:visitor_id] = rand(1000000000000000000).to_s
+      @current_visitor = Visitor.create(cookie_id: cookies.permanent[:visitor_id], browser: self.find_browser)
       session[:visitor_id] = @current_visitor.id
     end
     @current_visitor
@@ -29,13 +30,36 @@ class ApplicationController < ActionController::Base
   helper_method :current_visitor
 
   def update_visit_count
-    unless ( request.referer && request.referer.include?("senturia") )
-      @current_visitor.update(visit_count: @current_visitor.visit_count + 1)
+    if Rails.env.development?
+      unless ( request.referer && request.referer.include?("localhost") )
+        @current_visitor.update(visit_count: @current_visitor.visit_count + 1)
+      end
+    elsif Rails.env.production?
+      unless ( request.referer && request.referer.include?("senturia") )
+        @current_visitor.update(visit_count: @current_visitor.visit_count + 1)
+      end
     end
   end
 
   def update_pageview_count
     @current_visitor.update(pageview_visits: @current_visitor.pageview_visits + 1)
+  end
+
+  def find_browser
+    @ua = request.user_agent
+    if @ua.include? "Chrome"
+      "Google Chrome"
+    elsif @ua.include? "Safari"
+      "Safari"
+    elsif @ua.include? "Opera"
+      "Opera"
+    elsif @ua.include? "MSIE"
+      "Internet Explorer"
+    elsif @ua.include? "Firefox"
+      "Mozilla Firefox"
+    else
+      "Other"
+    end
   end
 
 end

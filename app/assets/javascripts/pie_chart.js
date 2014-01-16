@@ -40,24 +40,29 @@
         ctx.arc(x,y, radius, 0, uniqVisitsDeg, false);
         ctx.lineTo(x,y);
         ctx.closePath();
+        ctx.fillRect(canvas.width/2, 10, 10, 10);
         ctx.fill();
+        ctx.fillStyle = 'black';
+        ctx.fillText("Unique", canvas.width/2 + 15, 20);
 
         ctx.fillStyle = 'cornflowerblue' ; 
         ctx.beginPath();
         ctx.arc(x,y, radius, 0, uniqVisitsDeg, true);
         ctx.lineTo(x,y);
         ctx.closePath();
+        ctx.fillRect(10,10,10,10);
         ctx.fill();
+        ctx.fillStyle = 'black';
+        ctx.fillText("Total", 25, 20);
 
         ctx.font = '12pt Helvetica';
-        ctx.strokeStyle = 'black';
         ctx.fillStyle = 'white';
-        if(uniqVisitsDeg < Math.PI/8 ){
-            ctx.strokeText( uvPercent + '%', 160, 100);
+        if(uniqVisitsDeg < Math.PI/10 ){
+            ctx.fillText( uvPercent + '%', canvas.width-50, canvas.height/2+15);
         } else {
-            ctx.strokeText( uvPercent + '%', x + uvPercX, y+ uvPercY);
+            ctx.fillText( uvPercent + '%', x + uvPercX, y+ uvPercY+10);
         };
-        ctx.strokeText( totPercent + '%', x + totPercX, y - totPercY);
+        ctx.fillText( totPercent + '%', x + totPercX, y - totPercY -10 );
 
   });
 }());
