@@ -4,10 +4,10 @@
 <table>
   <thead>
   </thead>
-    <th>Total visits</th>
-    <th>Unique vistors</th>
-    <th>Page views</th>
-    <!-- <th>Average visit time</th> -->
+    <tr>Total visits</tr>
+    <tr>Unique vistors</tr>
+    <tr>Page views</tr>
+    <!-- <tr>Average visit time</tr> -->
   <tbody>
     <tr>
       <td id="total_visits">
@@ -28,24 +28,35 @@
   <h3>Browsers used</h3>
   <table>
     <thead>
-      <th>Chrome</th>
-      <th>Firefox</th>
-      <th>Safari</th>
-      <th>Internet Explorer</th>
-      <th>Other</th>
+      <th>Type</th>
+      <th>Count</th>
+
     </thead>
     <tbody>
-      <tr>
-        <td><%=@chrome%></td>
-        <td><%=@firefox%></td>
-        <td><%=@safari%></td>
-        <td><%=@ie%></td>
-        <td><%=@other%></td>
-
+      <tr class='browser'>
+        <td>Chrome</td>
+        <td class= 'count', id='chrome'><%=@chrome%></td>
+        <!-- <td><canvas id='bar_graph', height= '30', width = '100'></canvas></td> -->
+      </tr>
+      <tr class='browser'>
+        <td>Firefox</td>
+        <td class= 'count', id= 'firefox'><%=@firefox%></td>
+      </tr>
+      <tr class='browser'>
+        <td>Safari</td>
+        <td class= 'count', id='safari'><%=@safari%></td>
+      </tr>
+      <tr class='browser'>
+        <td>Internet Explorer</td>
+        <td class= 'count', id='ie'><%=@ie%></td>
+      </tr>
+      <tr class='browser'>
+        <td>Other</td>
+        <td class= 'count', id='other'><%=@other%></td>
       </tr>
     </tbody>
   </table>
-
+  <canvas id='bar_graph', height= '200', width = '300'></canvas>
 </div>
 <hr>
 

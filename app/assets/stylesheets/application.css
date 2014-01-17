@@ -154,21 +154,15 @@ td, th {
 .opera_list {
   border: 1px solid black;
 }
+
 .opera_list td {
   height: 50px;
   padding: 5px;
   width: 200px;
   border: 1px solid black;
   text-align: left;
-
 }
 
-#pie_chart {
+#pie_chart, #bar_graph {
   border: 1px solid black;
- 
 }
-/*
-#home_link {
-  margin-left: auto;
-}
-*/
