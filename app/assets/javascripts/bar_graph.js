@@ -40,7 +40,6 @@
     var ie_percent = ((ie/browser_total)*100).toFixed(2);
     var other_percent = ((other/browser_total)*100).toFixed(2);
 
-
     var drawBar = function(count, color, yCoord, percent){
       var y = yCoord,
           x = 0,
@@ -58,27 +57,6 @@
     drawBar(safari, 'red', 80, safari_percent);
     drawBar(ie, 'green', 110, ie_percent);
     drawBar(other, 'yellow', 140, other_percent);
-
-    // ctx.fillStyle='black';    
-    // ctx.fillText(chrome_percent+'%', 60, 20);
-
-//     (function(window){
- 
-//   var PieChartDrawer = function( element ){
-//     this.element = element;
-//     this.context = this.element.getContext( '2d' );
-//   };
- 
-//   PieChartDrawer.prototype.draw = function(){
-//     privateMethod();
-//   };
- 
-//   //var pcd = new PieChartDrawer( document.querySelector( "#canv1" ));
-//   //pcd.draw();
- 
-//   window.PieChartDrawer = PieChartDrawer;
-// })(this);
-
 
   });
 })();
