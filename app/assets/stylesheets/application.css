@@ -166,3 +166,7 @@ td, th {
 #pie_chart, #bar_graph {
   border: 1px solid black;
 }
+
+.browser {
+  border: 1px solid black;
+}
