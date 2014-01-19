@@ -43,8 +43,8 @@
     var drawBar = function(el, color){
       var y = 0,
           x = 0,
-          length = el.count * 30
-          width = 20
+          length = (el.percent/100) * 200,
+          width = 20,
           ctx = el.ctx;
         ctx.fillStyle = color;
         ctx.fillRect(x, y, length, width);
