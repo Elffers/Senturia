@@ -6,7 +6,6 @@ class WelcomeController < ApplicationController
       @bio = "Emily is the best"
     end
     @list = Composer.all.sort_by{|x| x[:name]}
-
   end  
 
   def calendar
