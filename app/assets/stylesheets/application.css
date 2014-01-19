@@ -99,7 +99,7 @@ img {
   border-radius: 12px;
 }
 
-#carlin {
+#carlin, #stats_link {
   font: small-caption;
   text-align: right;
 }
@@ -174,11 +174,16 @@ td, th {
 
 .visits {
   font-variant: small-caps;
-  width: 350px;
+  width: 400px;
   margin: auto;
 }
 
-.visits_table th {
+.browsers {
+  margin: auto;
+  width: 500px;
+}
+
+.visits_table, .browser_table th {
   border-bottom: 2px solid black;
 }
 #total_visits, #unique_visits, #total_pageviews {

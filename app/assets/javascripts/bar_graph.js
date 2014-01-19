@@ -1,62 +1,86 @@
-// (function(){ 
-//   document.addEventListener("DOMContentLoaded", function (e) {
+(function(){ 
+  document.addEventListener("DOMContentLoaded", function (e) {
 
-//     var canvas = document.getElementById('bar_graph'),
-//         ctx = canvas.getContext('2d');
+    var browser_els = document.querySelectorAll('.browser');
 
-//     // start helpers
-//     var rows = document.querySelectorAll('.count');
+    // returns array of browser tally
+    var rows = document.querySelectorAll('.count');
 
-//     var find_id = function(el){
-//      return el.id
-//     };
+    var find_id = function(el){
+     return el.id
+    };
 
-//     // returns array of ids
-//     var ids = Array.prototype.map.call(rows, find_id);
+    // returns array of ids
+    var ids = Array.prototype.map.call(rows, find_id);
 
-//     var get_count = function(id){
-//       return parseInt(document.getElementById(id).innerHTML); 
-//     };
+    var get_count = function(id){
+      return parseInt(document.getElementById(id).innerHTML); 
+    };
 
-//     // returns array of browser tally
-//     var counts = Array.prototype.map.call(ids, get_count);
+    var counts = Array.prototype.map.call(ids, get_count);
 
-//     var browser_total = counts.reduce(function(a,b){return a + b });
+    var browser_total = counts.reduce(function(a,b){return a + b });
+    
+    // end helpers
 
-//     var stats = counts.map.call(counts, function(count){return ((count/browser_total)*100).toFixed(2)});
+    var Browser = function(el){
+        this.id = el.children[1].id;
+        this.count = parseInt(el.children[1].innerHTML);
+        this.canvas = el.querySelector('#bar_graph');
+        this.ctx = this.canvas.getContext('2d');
+        this.percent = ((this.count/browser_total)*100).toFixed(2);
+    };
 
-//     // end helpers
+    var browser_array = Array.prototype.slice.call(browser_els, 0);
+    // var browsers = browser_array.forEach.call(new Browser);
 
-//     // this does the same thing as counts array
-//     var chrome = get_count('chrome'); 
-//     var firefox = get_count('firefox');
-//     var safari = get_count('safari');    
-//     var ie = get_count('ie');    
-//     var other = get_count('other'); 
+    var a = new Browser(browser_array[0]);
+    var b = new Browser(browser_array[1]);
+    var c = new Browser(browser_array[2]);
+    var d = new Browser(browser_array[3]);
+    var e = new Browser(browser_array[4]);
 
-//     var chrome_percent = ((chrome/browser_total)*100).toFixed(2);
-//     var firefox_percent = ((firefox/browser_total)*100).toFixed(2);
-//     var safari_percent = ((safari/browser_total)*100).toFixed(2);
-//     var ie_percent = ((ie/browser_total)*100).toFixed(2);
-//     var other_percent = ((other/browser_total)*100).toFixed(2);
+    var drawBar = function(el, color){
+      var y = 0,
+          x = 0,
+          length = el.count * 30
+          width = 20
+          ctx = el.ctx;
+        ctx.fillStyle = color;
+        ctx.fillRect(x, y, length, width);
+        ctx.fillStyle = 'black';
+        ctx.fillText(el.percent + '%', length + 5, y + width/2 + 5);
+        ctx.fill();
+    }; 
 
-//     var drawBar = function(count, color, yCoord, percent){
-//       var y = yCoord,
-//           x = 0,
-//           length = count * 30
-//           width = 20;
-//         ctx.fillStyle = color;
-//         ctx.fillRect(x, y, length, width);
-//         ctx.fillStyle = 'black';
-//         ctx.fillText(percent + '%', length + 5, y + width/2 + 5);
-//         ctx.fill();
-//     }; 
+    drawBar(a, '#173B0B');
+    drawBar(b, '#8A0808');
+    drawBar(c, '#0B2161');
+    drawBar(d, '#045FB4');
+    drawBar(e, '#088A08');
 
-//     drawBar(chrome, 'black', 20, chrome_percent);
-//     drawBar(firefox, 'blue', 50, firefox_percent);
-//     drawBar(safari, 'red', 80, safari_percent);
-//     drawBar(ie, 'green', 110, ie_percent);
-//     drawBar(other, 'yellow', 140, other_percent);
+   // Array.prototype.forEach.call(canvases,drawBar);
 
-//   });
-// })();
+  });
+})();
+
+(function(window){
+ 
+  var barDrawer = function( element ){
+    this.element = element;
+    this.context = this.element.getContext( '2d' );
+
+  };
+ 
+  barDrawer.prototype.draw = function(){
+    privateMethod();
+  };
+ 
+  //var pcd = new barDrawer( document.querySelector( "#canv1" ));
+  //pcd.draw();
+ 
+  window.barDrawer = barDrawer;
+})(this);
+
+
+ 
