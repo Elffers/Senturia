@@ -10,9 +10,8 @@ group :development do
   gem 'binding_of_caller'
 end
 
-gem "user_agent_info", "~> 0.1.0"
-
-
+gem "wmd-rails", "~> 0.0.7"
+gem "redcarpet", "~> 3.0.0"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -43,8 +42,6 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-
-gem "wmd-rails", "~> 0.0.7"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

@@ -10,12 +10,15 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :bio %><br>
-    <%= f.text_area :bio, rows: "10", cols: "80", class: 'wmd' %>
-  </div>
-  <div class= "actions">
+<div class='field'>
+  <div id='editor-button-bar'></div>
+    <%=f.label :bio %><br>
+    <%=f.text_area :bio, rows: '10', cols: '80', id: 'editor-input' %>
+  </div> 
+  <h3>Preview:</h3>
+  <div id="editor-preview"></div>
+  <div class= "submit">
     <%=f.submit "Update" %>
   </div>
-
 <% end %>
+</div>
