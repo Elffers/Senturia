@@ -14,14 +14,14 @@ class ApplicationController < ActionController::Base
     x_sendfile: true )
   end 
 
-   def current_visitor
+  def current_visitor
     if session[:visitor_id]
       @current_visitor = Visitor.find(session[:visitor_id])
     elsif cookies.permanent[:visitor_id] && Visitor.find_by(cookie_id: cookies.permanent[:visitor_id])
       @current_visitor = Visitor.find_by(cookie_id: cookies.permanent[:visitor_id])
       session[:visitor_id] = @current_visitor.id
     else
-      cookies.permanent[:visitor_id] = Time.now.nsec + rand(10000).to_s
+      cookies.permanent[:visitor_id] = (Time.now.nsec + rand(10000)).to_s
       @current_visitor = Visitor.create(cookie_id: cookies.permanent[:visitor_id], browser: self.find_browser)
       session[:visitor_id] = @current_visitor.id
       Browser.create(name:find_browser)
