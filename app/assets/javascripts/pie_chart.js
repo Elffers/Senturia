@@ -35,25 +35,25 @@
         // totPercX=(radius/2)*Math.cos(totVisitsDeg/2),
         // totPercY=(radius/2)*Math.sin(totVisitsDeg/2);
 
-        ctx.fillStyle = 'blue' ; 
+        ctx.fillStyle = '#8A0808' ; 
         ctx.beginPath();
         ctx.arc(x,y, radius, 0, uniqVisitsDeg, false);
         ctx.lineTo(x,y);
         ctx.closePath();
-        ctx.fillRect(canvas.width/2, 10, 10, 10);
+        ctx.fillRect(10, 10, 15, 15);
         ctx.fill();
         ctx.fillStyle = 'black';
-        ctx.fillText("Unique", canvas.width/2 + 15, 20);
+        ctx.fillText("Unique", 30, 20);
 
-        ctx.fillStyle = 'cornflowerblue' ; 
+        ctx.fillStyle = '#D8AC3C' ; 
         ctx.beginPath();
         ctx.arc(x,y, radius, 0, uniqVisitsDeg, true);
         ctx.lineTo(x,y);
         ctx.closePath();
-        ctx.fillRect(10,10,10,10);
+        ctx.fillRect(10,30,15,15);
         ctx.fill();
         ctx.fillStyle = 'black';
-        ctx.fillText("Total", 25, 20);
+        ctx.fillText("Total", 30, 40);
 
         ctx.font = '12pt Helvetica';
         ctx.fillStyle = 'white';

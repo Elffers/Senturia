@@ -165,8 +165,24 @@ td, th {
 
 #pie_chart, #bar_graph {
   border: 1px solid black;
+  margin: auto;
 }
 
 .browser {
   border: 1px solid black;
 }
+
+.visits {
+  font-variant: small-caps;
+  width: 350px;
+  margin: auto;
+}
+
+.visits_table th {
+  border-bottom: 2px solid black;
+}
+#total_visits, #unique_visits, #total_pageviews {
+  text-align: justify;
+}
+
+

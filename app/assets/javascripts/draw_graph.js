@@ -1,78 +1,85 @@
 (function(){ 
   document.addEventListener("DOMContentLoaded", function (e) {
 
-    var canvas = document.getElementById('bar_graph'),
-        ctx = canvas.getContext('2d');
+    var canvases = document.querySelectorAll('#bar_graph');
+        // ctx = canvas.getContext('2d');
+    var browser_els = document.querySelectorAll('.browser');
 
-// iterative method
-    var rows = document.querySelectorAll('.count');
+    // returns pseudo-array of tds with browser tally
+    var id_rows = document.querySelectorAll('.count');
 
     var find_id = function(el){
      return el.id
     };
 
-    var ids = Array.prototype.map.call(rows, find_id);
+    // returns array of element ids
+    var ids = Array.prototype.map.call(id_rows, find_id);
 
-    var get_count = function(id){
-      return parseInt(document.getElementById(id).innerHTML); 
+    var get_count = function(el){
+      return parseInt(el.innerHTML); 
     };
 
+    // function Browser(el){
+    //     this.id = el.children[1].id;
+    //     this.count = get_count(el.children[1]);
+    // };
+
+    var drawBarrowser = function(el){
+        this.id = el.children[1].id;
+        this.count = get_count(el.children[1]);
+    };
+
+    var browser_array = Array.prototype.slice.call(browser_els, 0);
+    var browsers = browser_array.map(function(el){
+        this.id = el.children[1].id;
+        this.count = get_count(el.children[1]);
+    });
+
+    // returns array of browser tally
     var counts = Array.prototype.map.call(ids, get_count);
 
     var browser_total = counts.reduce(function(a,b){return a + b });
 
+    // returns array of percentages 
     var stats = counts.map.call(counts, function(count){return ((count/browser_total)*100).toFixed(2)});
-    
-// end iteration
 
-    var chrome = parseInt(document.getElementById('chrome').innerHTML); 
-    var firefox = parseInt(document.getElementById('firefox').innerHTML);
-    var safari = parseInt(document.getElementById('safari').innerHTML);    
-    var ie = parseInt(document.getElementById('ie').innerHTML);    
-    var other = parseInt(document.getElementById('other').innerHTML); 
+    // end helpers
 
-    var chrome_percent = ((chrome/browser_total)*100).toFixed(2);
-
-
-    var drawBar = function(count, color, yCoord){
-      var y = yCoord,
+    // here, want one argument passed in, which is the element object
+    var drawBar = function(el){
+      var y = ,
           x = 0,
           length = count * 30
           width = 20;
         ctx.fillStyle = color;
         ctx.fillRect(x, y, length, width);
-        // var percent = browser/browser_total;
         ctx.fillStyle = 'black';
-        // ctx.fillText(percent + '%', length + 5, y + width/2 + 5);
-        // ctx.fill();
+        ctx.fillText(percent + '%', length + 5, y + width/2 + 5);
+        ctx.fill();
     }; 
 
-    drawBar(chrome, 'black', 20);
-    drawBar(firefox, 'blue', 50);
-    drawBar(safari, 'red', 80);
-    drawBar(ie, 'green', 110);
-    drawBar(other, 'yellow', 140);
+   Array.prototype.forEach.call(canvases,drawBar);
 
-    // ctx.fillStyle='black';    
-    // ctx.fillText(chrome_percent+'%', 60, 20);
+  });
+})();
 
-    (function(window){
+(function(window){
  
   var barDrawer = function( element ){
     this.element = element;
     this.context = this.element.getContext( '2d' );
+
   };
  
   barDrawer.prototype.draw = function(){
     privateMethod();
   };
  
-  //var pcd = new PieChartDrawer( document.querySelector( "#canv1" ));
+  //var pcd = new barDrawer( document.querySelector( "#canv1" ));
   //pcd.draw();
  
-  window.PieChartDrawer = PieChartDrawer;
+  window.barDrawer = barDrawer;
 })(this);
 
 
-  });
-})();
+ 
