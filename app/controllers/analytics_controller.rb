@@ -1,6 +1,6 @@
 require 'pp'
 class AnalyticsController < ApplicationController
-  http_basic_authenticate_with name: "Emilarr", password: "papillon1904"
+  http_basic_authenticate_with name: ENV['ADMIN_USERNAME'], password: ENV['ADMIN_PASSWORD']
 
   def home
     @total_visits = Visitor.all.count
@@ -11,7 +11,7 @@ class AnalyticsController < ApplicationController
     @other = Browser.where(name:"Other").count
   end
 
-  def new_performance 
+  def new_performance
     @performance = Performance.new
   end
 
@@ -46,6 +46,6 @@ class AnalyticsController < ApplicationController
     params.require(:about).permit(:bio)
   end
 
- 
+
 
 end
