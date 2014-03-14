@@ -1,6 +1,6 @@
-##[ADA Week 10 Project](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/master/week10/resources/analytics.md)
-
 # Analytics
+
+##[ADA Week 10 Project](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/master/week10/resources/analytics.md)
 
 In this project we will be building upon a Rails app by adding an
 analytics dashboard to an existing project. This dashboard will be a
