@@ -1,5 +1,4 @@
 <h2>Add a performance</h2>
-
 <%= form_for @performance, url: new_performance_path do |f| %>
   <% if @performance.errors.any? %>
   <div class= "error_messages">
@@ -26,5 +25,4 @@
   <div class= "actions">
     <%=f.submit "Add to calendar" %>
   </div>
-
 <% end %>

@@ -1,6 +1,4 @@
 <h2>Visits</h2>
-<%# raise %>
-<%#= Browser.all.inspect %>
 <div class= 'visits'>
   <table class='visits_table'>
     <thead>
@@ -25,47 +23,39 @@
   <canvas id="pie_chart", height= '300', width='400'></canvas>
 </div>
 <h2>Browsers used</h2>
-  <div class= "browsers">
-    <table class = 'browser_table'>
-      <thead>
-        <th>Type</th>
-        <th>Count</th>
-        <th>Percentage</th>
-      </thead>
-      <tbody>
-        <tr class='browser'>
-          <td>Chrome</td>
-          <td class= 'count', id='chrome'><%=@chrome%></td>
-          <td><canvas id='bar_graph', height= '30', width = '200'></canvas></td>
-        </tr>
-        <tr class='browser'>
-          <td>Firefox</td>
-          <td class= 'count', id= 'firefox'><%=@firefox%></td>
-          <td><canvas id='bar_graph', height= '30', width = '200'></canvas></td>
-        </tr>
-        <tr class='browser'>
-          <td>Safari</td>
-          <td class= 'count', id='safari'><%=@safari%></td>
-          <td><canvas id='bar_graph', height= '30', width = '200'></canvas></td>
-        </tr>
-        <tr class='browser'>
-          <td>Internet Explorer</td>
-          <td class= 'count', id='ie'><%=@ie%></td>
-          <td><canvas id='bar_graph', height= '30', width = '200'></canvas></td>
-        </tr>
-        <tr class='browser'>
-          <td>Other</td>
-          <td class= 'count', id='other'><%=@other%></td>
-          <td><canvas id='bar_graph', height= '30', width = '200'></canvas></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-<h2>Edit Content</h2>
-<ul>
-<li><h3><%=link_to "Update rep list", operas_new_path %></h3></li>
-<li><h3><%=link_to "Edit bio", edit_bio_path %></h3></li>
-<h3><%= link_to "Add a performance", new_performance_path %></h3>
-<li></li>
-</ul>
+<div class= "browsers">
+  <table class = 'browser_table'>
+    <thead>
+      <th>Type</th>
+      <th>Count</th>
+      <th>Percentage</th>
+    </thead>
+    <tbody>
+      <tr class='browser'>
+        <td>Chrome</td>
+        <td class= 'count', id='chrome'><%=@chrome%></td>
+        <td><canvas id='bar_graph', height= '30', width = '200'></canvas></td>
+      </tr>
+      <tr class='browser'>
+        <td>Firefox</td>
+        <td class= 'count', id= 'firefox'><%=@firefox%></td>
+        <td><canvas id='bar_graph', height= '30', width = '200'></canvas></td>
+      </tr>
+      <tr class='browser'>
+        <td>Safari</td>
+        <td class= 'count', id='safari'><%=@safari%></td>
+        <td><canvas id='bar_graph', height= '30', width = '200'></canvas></td>
+      </tr>
+      <tr class='browser'>
+        <td>Internet Explorer</td>
+        <td class= 'count', id='ie'><%=@ie%></td>
+        <td><canvas id='bar_graph', height= '30', width = '200'></canvas></td>
+      </tr>
+      <tr class='browser'>
+        <td>Other</td>
+        <td class= 'count', id='other'><%=@other%></td>
+        <td><canvas id='bar_graph', height= '30', width = '200'></canvas></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
