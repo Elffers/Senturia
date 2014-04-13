@@ -21,7 +21,7 @@ class WelcomeController < ApplicationController
     @list = Composer.all.sort_by{|x| x[:name]}
   end
 
-  def calendar
-    @performances = Performance.all
-  end
+  # def calendar
+  #   @performances = Performance.all
+  # end
 end
