@@ -1,8 +1,8 @@
 class OperasController < ApplicationController
   def new
     @opera = Opera.new
-    @operas = Opera.all.map {|opera| pp opera}
-    @composers = Composer.all.sort_by{|x| x[:name]}.map {|x| [x[:name], x[:id]]}
+    @operas = Opera.all
+    @composers = Composer.alphabetize_array
   end
 
   def create
@@ -16,7 +16,7 @@ class OperasController < ApplicationController
 
   def edit
     @opera = Opera.find(params[:id])
-    @composers = Composer.all.sort_by{|x| x[:name]}.map {|x| [x[:name], x[:id]]}
+    @composers = Composer.alphabetize_array
   end
 
   def update
