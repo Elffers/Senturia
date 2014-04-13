@@ -7,12 +7,12 @@ class ApplicationController < ActionController::Base
   before_action :update_visit_count
 
   def serve
-    path = "public/resume.pdf"
+    path = "public/resumes/resume.pdf"
     send_file( path,
     disposition: 'inline',
     type: 'application/pdf',
     x_sendfile: true )
-  end 
+  end
 
   def current_visitor
     if session[:visitor_id]

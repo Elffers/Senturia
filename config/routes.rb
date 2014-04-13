@@ -7,7 +7,7 @@ Emilarr::Application.routes.draw do
   patch '/operas/:id' => 'operas#update', as: :opera
   delete 'operas/:id' => 'operas#delete'
 
-  get "public/resume.pdf" => "application#serve"
+  get "public/resumes/resume.pdf" => "application#serve"
   get "/calendar" => "welcome#calendar"
   get "/analytics" => "analytics#home"
 
