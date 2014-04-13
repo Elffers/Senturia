@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def home
+    # @links = Link.curent
     @links =  [ {
                   url: "http://www.houstongrandopera.org/studio",
                   name: "Houston Grand Opera Studio"

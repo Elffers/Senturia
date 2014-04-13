@@ -32,7 +32,7 @@ class AdminController < ApplicationController
 
 
   def links
-    @links = Link.all
+    @links = Link.current
   end
 
   private
