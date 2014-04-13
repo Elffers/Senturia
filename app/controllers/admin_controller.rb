@@ -18,7 +18,7 @@ class AdminController < ApplicationController
   end
 
   def edit_bio
-    @about = About.new
+    @about = About.last
   end
 
   def update_bio
