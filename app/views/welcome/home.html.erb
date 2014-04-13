@@ -27,7 +27,7 @@
         <tr>
           <% unless composer.name == "" %>
             <td><strong><%= composer.name %></strong>
-            <% composer.operas.each do |opera| %>
+            <% composer.sort_operas.each do |opera| %>
               <ul>
                 <li><i><%=opera.name%></i> <%="[#{opera.notes}]" if opera.notes!= '' %></li>
               </ul>
