@@ -11,6 +11,9 @@ gem 'jbuilder', '~> 1.2'
 gem "httparty", "~> 0.12.0"
 gem 'figaro'
 gem 'carrierwave'
+gem 'jquery-ui-rails'
+gem 'jquery-modal-rails'
+# gem "mail", "2.5.4"
 
 group :doc do
   gem 'sdoc', require: false
