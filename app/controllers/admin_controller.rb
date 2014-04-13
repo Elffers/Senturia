@@ -30,6 +30,11 @@ class AdminController < ApplicationController
     end
   end
 
+
+  def links
+    @links = Link.all
+  end
+
   private
   def performance_params
     params.require(:performance).permit(:date, :venue, :program)

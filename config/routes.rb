@@ -14,6 +14,8 @@ Emilarr::Application.routes.draw do
 
   get "/edit_bio" => "admin#edit_bio"
   post "/edit_bio" => "admin#update_bio"
+  get "/links" => "admin#links"
+  post "/links" => "admin#update_links"
 
   # TODO: put this back in the future
   # get "/calendar" => "welcome#calendar"
