@@ -3,7 +3,11 @@ class Composer < ActiveRecord::Base
   validates :name, presence: true
 
   def self.alphabetize_array
-    self.all.sort_by{|x| x[:name]}.map {|x| [x[:name], x[:id]]}
+    self.alphabetize.map {|x| [x[:name], x[:id]]}
+  end
+
+  def self.alphabetize
+    self.all.sort_by{ |x| x.name }
   end
 
 end

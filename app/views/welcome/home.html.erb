@@ -23,7 +23,7 @@
   <h3><%=link_to "View full resume", "public/resumes/resume.pdf" %></h3>
   <table class="opera_list">
     <tbody>
-      <% @list.each do |composer|%>
+      <% @composers.each do |composer|%>
         <tr>
           <% unless composer.name == "" %>
             <td><strong><%= composer.name %></strong>

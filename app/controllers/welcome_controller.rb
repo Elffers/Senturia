@@ -18,7 +18,7 @@ class WelcomeController < ApplicationController
     else
       @bio = "Emily is the best"
     end
-    @list = Composer.all.sort_by{|x| x[:name]}
+    @composers = Composer.alphabetize
   end
 
   # def calendar
