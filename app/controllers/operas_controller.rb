@@ -20,8 +20,8 @@ class OperasController < ApplicationController
   end
 
   def update
-    @opera = Opera.update(opera_params)
-    if @opera.save
+    @opera = Opera.find(params[:id])
+    if @opera.update(opera_params)
       redirect_to root_path
     else
       render :add_rep
@@ -39,6 +39,5 @@ class OperasController < ApplicationController
   def opera_params
     params.require(:opera).permit(:name, :notes, :composer_id, :composer_name)
   end
-  
 
 end
