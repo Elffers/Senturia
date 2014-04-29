@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.1'
 gem 'rails', '4.0.2'
 gem "wmd-rails", "~> 0.0.7"
 gem "redcarpet", "~> 3.0.0"
@@ -23,6 +24,12 @@ group :development do
   gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+group :test do
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem 'simplecov', :require => false
 end
 
 group :production do
