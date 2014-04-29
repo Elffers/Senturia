@@ -54,7 +54,7 @@
   </div>
   <h2>links</h2>
     <ul>
-      <% @links.each do |link| if @links %>
+      <% @links.each do |link| %>
         <li><a href= <%=link[:url]%>><%=link[:name] %></a></li>
       <% end %>
     </ul>
