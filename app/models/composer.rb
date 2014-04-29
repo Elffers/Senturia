@@ -3,7 +3,7 @@ class Composer < ActiveRecord::Base
   validates :name, presence: true
 
   def self.alphabetize_array
-    self.alphabetize.map {|composer| [composer[:name], x[:id]]}
+    self.alphabetize.map {|composer| [composer[:name], composer[:id]]}
   end
 
   def self.alphabetize
