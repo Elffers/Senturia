@@ -4,18 +4,6 @@ class AdminController < ApplicationController
   def home
   end
 
-  # def new_performance
-  #   @performance = Performance.new
-  # end
-
-  # def create_performance
-  #   @performance = Performance.new(performance_params)
-  #   if @performance.save
-  #     redirect_to calendar_path
-  #   else
-  #     render :new_performance
-  #   end
-  # end
 
   def edit_bio
     @about = About.last
@@ -28,11 +16,6 @@ class AdminController < ApplicationController
     else
       render :edit_bio
     end
-  end
-
-
-  def links
-    @links = Link.current
   end
 
   private

@@ -1,0 +1,10 @@
+<ul>
+  <% @links.each do |link| %>
+  <li>
+    <%=link.name %><br>
+    <%=link_to link.url, "#{link.url}" %>
+  </li>
+  <% end %>
+</ul>
+
+<%= render 'form' %>

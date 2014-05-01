@@ -1,0 +1,23 @@
+<h2>Add/Edit link:</h2>
+<%= form_for @link do |f| %>
+  <% if @link.errors.any? %>
+    <h3>Form is invalid</h3>
+    <ul>
+      <% for message in @link.errors.full_messages %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :url %>:
+  <%= f.text_field :url %><br/>
+
+  <%= f.label :show %>:
+  <%= f.check_box :show %><br/>
+
+  <%= f.submit %>
+<% end %>
+
