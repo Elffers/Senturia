@@ -1,5 +1,5 @@
 require 'pp'
-class AnalyticsController < ApplicationController
+class AnalyticsController < AdminController
 
   def home
     @total_visits = Visitor.all.count
