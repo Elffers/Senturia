@@ -4,7 +4,6 @@ class AdminController < ApplicationController
   def home
   end
 
-
   def edit_bio
     @about = About.last
   end
