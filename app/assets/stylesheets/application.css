@@ -2,7 +2,7 @@ body {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   color:  #321203;
   /*#321508;*/
-  background-color: #8A0808; 
+  background-color: #8A0808;
   position: relative;
 }
 
@@ -51,7 +51,7 @@ h3 {
 
 .navbar .menu li {
   font-size: 25px;
-  font-variant: small-caps; 
+  font-variant: small-caps;
   display: inline-block;
   padding: 10px;
   /*border: 1px solid black;*/
@@ -131,7 +131,7 @@ li {
 
 #bio_pic {
   padding: 5px;
-  position: relative; 
+  position: relative;
   width: 260px;
   float: right;
   /*border: 1px solid black;*/
