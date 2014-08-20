@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140413091915) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "abouts", force: true do |t|
     t.text     "bio"
     t.datetime "created_at"

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.1'
+ruby '2.1.2'
 gem 'rails', '4.0.2'
 gem "wmd-rails", "~> 0.0.7"
 gem "redcarpet", "~> 3.0.0"
@@ -14,6 +14,8 @@ gem 'figaro'
 gem 'carrierwave'
 gem 'jquery-ui-rails'
 gem 'jquery-modal-rails'
+gem 'pg'
+
 # gem "mail", "2.5.4"
 
 group :doc do
@@ -21,7 +23,6 @@ group :doc do
 end
 
 group :development do
-  gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
 end
@@ -33,7 +34,6 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
