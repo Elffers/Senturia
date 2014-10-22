@@ -13,7 +13,7 @@ Emilarr::Application.routes.draw do
   get "/admin"            => "admin#home"
 
   get "/edit_bio"         => "admin#edit_bio"
-  post "/edit_bio"       => "admin#update_bio"
+  patch "/edit_bio"       => "admin#update_bio"
 
   get "/update_resume"    => "admin#edit_resume"
   patch "/update_resume"  => "admin#update_resume"

@@ -14,8 +14,8 @@ class AdminController < ApplicationController
   end
 
   def update_bio
-    @about = About.new(about_params)
-    if @about.save
+    @about = About.last
+    if @about.update(about_params)
       redirect_to root_path
     else
       render :edit_bio
