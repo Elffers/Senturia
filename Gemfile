@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
 gem 'rails', '4.0.2'
 gem "wmd-rails", "~> 0.0.7"
 gem "redcarpet", "~> 3.0.0"
