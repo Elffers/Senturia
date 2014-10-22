@@ -1,0 +1,20 @@
+<h2>Update Resume</h2>
+<%= form_for @about, url: update_resume_path do |f| %>
+  <% if @about.errors.any? %>
+  <div class= "error_messages">
+    <h3> Form is invalid </h3>
+    <ul>
+      <% for message in @about.errors.full_messages %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class='field'>
+    <%= f.label :resume %><br>
+    <%= f.file_field :resume %>
+  </div>
+  <%= submit_tag("Submit") %>
+
+<% end %>
+</div>
