@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
   before_action :update_visit_count
 
   def serve
-    path = "public/resumes/resume.pdf"
+    uploader = About.last.resume
+    path = uploader.file.path
     send_file( path,
     disposition: 'inline',
     type: 'application/pdf',
