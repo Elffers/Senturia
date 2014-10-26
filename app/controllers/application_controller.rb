@@ -7,8 +7,9 @@ class ApplicationController < ActionController::Base
   before_action :update_visit_count
 
   def serve
-    uploader = About.last.resume
-    path = uploader.file.path
+    #uploader = About.last.resume
+    #path = uploader.file.path
+    path = 'public/resumes/resume_Oct2014.pdf'
     send_file( path,
     disposition: 'inline',
     type: 'application/pdf',
@@ -28,6 +29,11 @@ class ApplicationController < ActionController::Base
       Browser.create(name:find_browser)
     end
     @current_visitor
+    rescue ActiveRecord::RecordNotFound
+      session[:visitor_id] = nil
+      @current_visitor = Visitor.create(cookie_id: cookies.permanent[:visitor_id], browser: self.find_browser)
+      session[:visitor_id] = @current_visitor.id
+      Browser.create(name:find_browser)
   end
   helper_method :current_visitor
 
